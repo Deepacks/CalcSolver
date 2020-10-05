@@ -1,11 +1,12 @@
 #include <iostream>
 #include <cmath>
+#include <string>
 using namespace std;
 
 int main(void) {
   cout << "Somma: 1    Differenza: 2    Moltiplicazione: 3    Divisione: 4    Potenza: 5    Radice: 6 \n" << endl ;
-  int op ;
-  int n1, n2 ;
+  double op ;
+  double n1, n2 ;
   int flag = 0 ;
 
   do{
@@ -59,16 +60,17 @@ int main(void) {
 //Divisione
   if (op == 4) {
     float res = 0 ;
+    int a, b ;
     cout << "Inserisci i due numeri da Moltiplicare: " << endl ;
     cout << "Primo numero: " ;
-    cin >> n1 ;
+    cin >> a ;
     cout << "Secondo numero: " ;
-    cin >> n2 ;
-    op = n1 / n2 ;
-    res = n1 % n2  ;
-    res = res / n2 ;
+    cin >> b ;
+    op = a / b ;
+    res = a % b ;
+    res = res / b ;
     res = res + op ;
-    cout << "\n" << n1 << " / " << n2 << " = " << res ;
+    cout << "\n" << a << " / " << b << " = " << res ;
   }
 
 //Potenza
