@@ -19,5 +19,27 @@ int main(void) {
     flag++ ;
   }while (op > 4) ;
 
+//Somma
+  if (op == 1) {
+    cout << "Inserisci i due numeri da Sommare: "<< endl ;
+    cout << "Primo numero: " ;
+    cin >> n1 ;
+    cout << "Secondo numero: " ;
+    cin >> n2 ;
+    op = n1 + n2 ;
+    cout << "\n" << n1 << " + " << n2 << " = " << op ;
+  }
+
+//Differenza
+  if (op == 2) {
+    cout << "Inserisci i due numeri da Sottrarre: "<< endl ;
+    cout << "Primo numero: " ;
+    cin >> n1 ;
+    cout << "Secondo numero: " ;
+    cin >> n2 ;
+    op = n1 - n2 ;
+    cout << "\n" << n1 << " - " << n2 << " = " << op ;
+  }
+
   return 0 ;
 }
