@@ -3,7 +3,7 @@ using namespace std;
 
 int main(void) {
   cout << "Somma: 1    Differenza: 2    Moltiplicazione: 3   Divisione: 4\n" << endl ;
-  int op, n1, n2 ;
+    int op, n1, n2 ;
   int flag = 0 ;
 
   do{
@@ -41,5 +41,32 @@ int main(void) {
     cout << "\n" << n1 << " - " << n2 << " = " << op ;
   }
 
+//Moltiplicazione
+  if (op == 3) {
+    cout << "Inserisci i due numeri da Moltiplicare: "<< endl ;
+    cout << "Primo numero: " ;
+    cin >> n1 ;
+    cout << "Secondo numero: " ;
+    cin >> n2 ;
+    op = n1 * n2 ;
+    cout << "\n" << n1 << " x " << n2 << " = " << op ;
+  }
+
+//Divisione
+  if (op == 4) {
+    float res = 0 ;
+    cout << "Inserisci i due numeri da Moltiplicare: "<< endl ;
+    cout << "Primo numero: " ;
+    cin >> n1 ;
+    cout << "Secondo numero: " ;
+    cin >> n2 ;
+    op = n1 / n2 ;
+    res = n1 % n2  ;
+    res = res / n2 ;
+    res = res + op ;
+    cout << "\n" << n1 << " / " << n2 << " = " << res ;
+  }
+
   return 0 ;
 }
+//op + ((n1 % n2)/n2)
