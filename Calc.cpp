@@ -137,10 +137,10 @@ int main(void) {
         eq = stoi(equazione[0]) + stoi(equazione[1]) ;
       break ;
       case 2 :
-
+        eq = stoi(equazione[0]) - stoi(equazione[1]) ;
       break ;
       case 3 :
-
+        eq = stoi(equazione[0]) * stoi(equazione[1]) ;
       break ;
       case 4 :
 
@@ -155,17 +155,15 @@ int main(void) {
 
       //Risoluzione altre operazioni
     for (i=2 ; i < n+1 ; i++) {
-      int io = 1 ;
-
-      switch (stoi(operazioni[io])) {
+      switch (stoi(operazioni[i-1])) {
         case 1 :
           eq = eq + stoi (equazione[i]) ;
         break;
         case 2 :
-
+          eq = eq - stoi (equazione[i]) ;
         break ;
         case 3 :
-
+          eq = eq * stoi (equazione[i]) ;
         break ;
         case 4 :
 
@@ -177,8 +175,6 @@ int main(void) {
 
         break ;
       }
-
-        io ++ ;
     }
 
     //Output risultato
@@ -187,6 +183,8 @@ int main(void) {
       cout << stoi(equazione[i]) ;
       if (i < n) {
         if (stoi(operazioni[i]) == 1) cout << " + " ;
+        if (stoi(operazioni[i]) == 2) cout << " - " ;
+        if (stoi(operazioni[i]) == 3) cout << " * " ;
       }
     }
     cout << " = " << eq ;
