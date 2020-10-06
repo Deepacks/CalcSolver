@@ -123,7 +123,7 @@ int main(void) {
         if (flag > 0) cout << "Sono accettati valori da 1 a 6" << endl ;
         cin >> operazioni[i] ;
         flag ++ ;
-      }while (stoi(operazioni[i]) > 6) ;
+      }while (stod(operazioni[i]) > 6) ;
     }
 
     cout << "\nInserire i numeri in ordine:" << endl ;
@@ -131,16 +131,16 @@ int main(void) {
 
     //Risoluzione equazione
       //Risoluzione prima operazione
-    int eq ;
+    double eq ;
     switch (stoi(operazioni[0])){
       case 1 :
-        eq = stoi(equazione[0]) + stoi(equazione[1]) ;
+        eq = stod(equazione[0]) + stod(equazione[1]) ;
       break ;
       case 2 :
-        eq = stoi(equazione[0]) - stoi(equazione[1]) ;
+        eq = stod(equazione[0]) - stod(equazione[1]) ;
       break ;
       case 3 :
-        eq = stoi(equazione[0]) * stoi(equazione[1]) ;
+        eq = stod(equazione[0]) * stod(equazione[1]) ;
       break ;
       case 4 :
 
@@ -157,13 +157,13 @@ int main(void) {
     for (i=2 ; i < n+1 ; i++) {
       switch (stoi(operazioni[i-1])) {
         case 1 :
-          eq = eq + stoi (equazione[i]) ;
+          eq = eq + stod (equazione[i]) ;
         break;
         case 2 :
-          eq = eq - stoi (equazione[i]) ;
+          eq = eq - stod (equazione[i]) ;
         break ;
         case 3 :
-          eq = eq * stoi (equazione[i]) ;
+          eq = eq * stod (equazione[i]) ;
         break ;
         case 4 :
 
@@ -180,11 +180,11 @@ int main(void) {
     //Output risultato
     cout << "\n\nRisultato:" << endl << endl;
     for (i=0 ; i < n+1 ; i++){
-      cout << stoi(equazione[i]) ;
+      cout << stod(equazione[i]) ;
       if (i < n) {
-        if (stoi(operazioni[i]) == 1) cout << " + " ;
-        if (stoi(operazioni[i]) == 2) cout << " - " ;
-        if (stoi(operazioni[i]) == 3) cout << " * " ;
+        if (stod(operazioni[i]) == 1) cout << " + " ;
+        if (stod(operazioni[i]) == 2) cout << " - " ;
+        if (stod(operazioni[i]) == 3) cout << " * " ;
       }
     }
     cout << " = " << eq ;
