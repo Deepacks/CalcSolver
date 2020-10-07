@@ -147,10 +147,10 @@ int main(void) {
       }
 
     //Divisioni
-    if (operazioni[i] == 4) {
-      equazione[i] = equazione[i] / equazione[i+1] ;
-      equazione[i+1] = 1 ;
-    }
+      if (operazioni[i] == 4) {
+        equazione[i] = equazione[i] / equazione[i+1] ;
+        equazione[i+1] = 1 ;
+      }
 
     }
 
