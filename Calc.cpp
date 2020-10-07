@@ -123,6 +123,19 @@ int main(void) {
     cout << "\nInserire i numeri in ordine:" << endl ;
     for (i=0 ; i < n+1 ; i++) cin >> equazione[i] ;
 
+    //Output equazione pre-risoluzione
+    cout << "\n\nRisultato:" << endl << endl;
+    for (i=0 ; i < n+1 ; i++){
+      cout << equazione[i] ;
+      if (i < n) {
+        if (operazioni[i] == 1) cout << " + " ;
+        if (operazioni[i] == 2) cout << " - " ;
+        if (operazioni[i] == 3) cout << " * " ;
+        if (operazioni[i] == 4) cout << " / " ;
+        if (operazioni[i] == 5) cout << " ^ " ;
+      }
+    }
+
     //Risoluzione equazione
       //Risoluzione operazioni moltiplicazione e divisione
     for (i = 0 ; i < n ; i++) {
@@ -180,18 +193,7 @@ int main(void) {
       }
     }
 
-    //Output risultato
-    cout << "\n\nRisultato:" << endl << endl;
-    for (i=0 ; i < n+1 ; i++){
-      cout << equazione[i] ;
-      if (i < n) {
-        if (operazioni[i] == 1) cout << " + " ;
-        if (operazioni[i] == 2) cout << " - " ;
-        if (operazioni[i] == 3) cout << " * " ;
-        if (operazioni[i] == 4) cout << " / " ;
-        if (operazioni[i] == 5) cout << " ^ " ;
-      }
-    }
+    //Output risultato post-risoluzione
     cout << " = " << eq ;
   }
 
