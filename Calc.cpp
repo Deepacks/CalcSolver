@@ -68,7 +68,7 @@ int main(void) {
 
   //Divisione
     if (op == 4) {
-      cout << "Inserisci i due numeri da Moltiplicare: " << endl ;
+      cout << "Inserisci i due numeri da Dividere: " << endl ;
       cout << "Primo numero: " ;
       cin >> n1 ;
       cout << "Secondo numero: " ;
