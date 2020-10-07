@@ -5,7 +5,7 @@ using namespace std;
 
 int main(void) {
 
-  double cast ;
+  double eq ;
   int t ;
   cout << "Operazioni: 1    Equazioni:2" << endl ;
   cin >> t ;
@@ -108,8 +108,8 @@ int main(void) {
     cout << "\n- Somma: 1    Differenza: 2    Moltiplicazione: 3    Divisione: 4    Potenza: 5 -" << endl ;
     cout << "\nInserire le operazioni in ordine:" << endl ;
 
-    string operazioni[n] ;
-    string equazione[n+1] ;
+    float operazioni[n] ;
+    float equazione[n+1] ;
 
     for (i=0 ; i < n ; i++) {
       flag = 0;
@@ -117,50 +117,65 @@ int main(void) {
         if (flag > 0) cout << "Sono accettati valori da 1 a 6" << endl ;
         cin >> operazioni[i] ;
         flag ++ ;
-      }while (stod(operazioni[i]) > 5) ;
+      }while (operazioni[i] > 5) ;
     }
 
     cout << "\nInserire i numeri in ordine:" << endl ;
     for (i=0 ; i < n+1 ; i++) cin >> equazione[i] ;
 
     //Risoluzione equazione
+      //Risoluzione operazioni moltiplicazione e divisione
+    for (i = 0 ; i < n ; i++) {
+      //Moltiplicazioni
+      if (operazioni[i] == 3) {
+        equazione[i] = equazione[i] * equazione[i+1] ;
+        equazione[i+1] = 1 ;
+      }
+
+    //Divisioni
+    if (operazioni[i] == 4) {
+      equazione[i] = equazione[i] / equazione[i+1] ;
+      equazione[i+1] = 1 ;
+    }
+
+    }
+
       //Risoluzione prima operazione
-    double eq ;
-    switch (stoi(operazioni[0])){
+    switch (int temp = (int) operazioni[0]){
       case 1 :
-        eq = stod(equazione[0]) + stod(equazione[1]) ;
+        eq = equazione[0] + equazione[1] ;
       break ;
       case 2 :
-        eq = stod(equazione[0]) - stod(equazione[1]) ;
+        eq = equazione[0] - equazione[1] ;
       break ;
       case 3 :
-        eq = stod(equazione[0]) * stod(equazione[1]) ;
+        eq = equazione[0] * equazione[1] ;
       break ;
       case 4 :
-        eq = stod(equazione[0]) / stod(equazione[1]) ;
+        eq = equazione[0] / equazione[1] ;
       break ;
       case 5 :
-        eq = pow(stod(equazione[0]), stod(equazione[1])) ;
+        eq = pow(equazione[0], equazione[1]) ;
       break ;
     }
 
       //Risoluzione altre operazioni
     for (i=2 ; i < n+1 ; i++) {
-      switch (stoi(operazioni[i-1])) {
+      switch (int temp = (int) operazioni[i-1]) {
         case 1 :
-          eq = eq + stod(equazione[i]) ;
+          eq = eq + equazione[i] ;
         break;
         case 2 :
-          eq = eq - stod(equazione[i]) ;
+          eq = eq - equazione[i] ;
         break ;
         case 3 :
-          eq = eq * stod(equazione[i]) ;
+          eq = eq * equazione[i] ;
         break ;
         case 4 :
-          eq = eq / stod(equazione[i]) ;
+          eq = eq / equazione[i] ;
         break ;
         case 5 :
-         eq = pow(eq, stod(equazione[i])) ;
+         eq = pow(eq, equazione[i]) ;
         break ;
       }
     }
@@ -168,13 +183,13 @@ int main(void) {
     //Output risultato
     cout << "\n\nRisultato:" << endl << endl;
     for (i=0 ; i < n+1 ; i++){
-      cout << stod(equazione[i]) ;
+      cout << equazione[i] ;
       if (i < n) {
-        if (stoi(operazioni[i]) == 1) cout << " + " ;
-        if (stoi(operazioni[i]) == 2) cout << " - " ;
-        if (stoi(operazioni[i]) == 3) cout << " * " ;
-        if (stoi(operazioni[i]) == 4) cout << " / " ;
-        if (stoi(operazioni[i]) == 5) cout << " ^ " ;
+        if (operazioni[i] == 1) cout << " + " ;
+        if (operazioni[i] == 2) cout << " - " ;
+        if (operazioni[i] == 3) cout << " * " ;
+        if (operazioni[i] == 4) cout << " / " ;
+        if (operazioni[i] == 5) cout << " ^ " ;
       }
     }
     cout << " = " << eq ;
