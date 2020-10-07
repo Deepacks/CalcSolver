@@ -1,6 +1,7 @@
 #include <iostream>
 #include <cmath>
 #include <string>
+#include <conio.h>
 using namespace std;
 
 int main(void) {
@@ -196,6 +197,7 @@ int main(void) {
     //Output risultato post-risoluzione
     cout << " = " << eq ;
   }
-
+  cout << endl << "\nPremere un tasto per uscire :)" ;
+  getch() ;
   return 0 ;
 }
