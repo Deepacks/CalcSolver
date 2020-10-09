@@ -152,6 +152,11 @@ int main(void) {
         equazione[i+1] = 1 ;
       }
 
+      if (operazioni[i] == 5) {
+        equazione[i] = pow(equazione[i], equazione[i+1]) ;
+        equazione[i+1] = 1 ;
+      }
+
     }
 
       //Risoluzione prima operazione
